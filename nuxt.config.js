@@ -76,4 +76,8 @@ export default {
     host: '0.0.0.0', // default: localhost,
     timing: false
   },
+
+  generate: {
+    dir: './public'
+  }
 }
