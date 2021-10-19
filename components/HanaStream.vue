@@ -1,8 +1,12 @@
 <template>
   <div class="HanaStream">
-    <LazyYoutube
+    <!-- <LazyYoutube
         ref="lazyVideo"
         src="https://www.youtube.com/watch?v=Z-NtPmIhokw"
+    /> -->
+    <LazyYoutube
+        ref="lazyVideo"
+        :src=getData()
     />
     
     <button @click="handleClick('playVideo')">Play</button>
@@ -16,12 +20,27 @@
     import { LazyYoutube } from "vue-lazytube";
     
     export default {
+      data () {
+        return{
+          // streamingurl:"https://www.youtube.com/watch?v=Z-NtPmIhokw",
+          streamingurl:"https://www.youtube.com/watch?v=sqH0u8wN4Rs"
+        };
+      },
       name: "HanaStream",
       components: {LazyYoutube},
       methods: {
+        getData() {
+          return this.hanaurl
+        },
         handleClick(event) {
           this.$refs["lazyVideo"][event]();
         },
+      },
+      props: {
+        hanaurl: {
+          type: String,
+          required: true,
+        }
       },
     };
 </script>

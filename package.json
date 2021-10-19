@@ -13,6 +13,9 @@
   },
   "dependencies": {
     "core-js": "^3.15.1",
+    "dotenv": "^10.0.0",
+    "firebase": "9.0.2",
+    "firebase-tools": "^9.20.0",
     "nuxt": "^2.15.7",
     "vue-lazytube": "^1.0.2",
     "vuetify": "^2.5.5"

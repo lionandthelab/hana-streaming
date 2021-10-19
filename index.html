@@ -1,0 +1,55 @@
+```bash
+<html>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
+    <h1>REST Test</h1>
+    <input type="text" value="_" id="result" />
+    <script>
+      // flask 등을 이용해 rest api를 만들 곳의 url
+      // ex. http://localhost:3000
+      const uri = "http://localhost:3005/hello/lionandthelab";
+
+      const initDetails = {
+        method: "get", // GET, POST, PUT, DELETE 중 메소드
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+        },
+        mode: "cors",
+      };
+
+      function GetData() {
+        fetch(uri, initDetails)
+          .then((response) => {
+            if (response.status !== 200) {
+              console.log(
+                "Looks like there was a problem. Status Code: " +
+                  response.status
+              );
+
+              return;
+            }
+
+            console.log(response.headers.get("Content-Type"));
+
+            return response.json();
+          })
+
+          .then((myJson) => {
+            console.log(JSON.stringify(myJson));
+            document.getElementById("result").value = JSON.stringify(
+              myJson["message"]
+            );
+          })
+
+          .catch((err) => {
+            console.log("Fetch Error :-S", err);
+          });
+      }
+    </script>
+
+    <button id="getData" onclick="GetData()">Get Data</button>
+  </body>
+</html>
+``` 
