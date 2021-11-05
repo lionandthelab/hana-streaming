@@ -31,6 +31,8 @@
           <q-btn round dense flat color="grey-8" icon="video_call" v-if="$q.screen.gt.sm">
             <q-tooltip>스트림 등록</q-tooltip>
           </q-btn>
+          <!-- <q-btn round dense flat color="grey-8" icon="moon" v-if="$q.screen.gt.sm" @click="$q.dark.toggle()">
+          </q-btn> -->
           <!-- <q-btn round dense flat color="grey-8" icon="apps" v-if="$q.screen.gt.sm">
             <q-tooltip>Apps</q-tooltip>
           </q-btn>

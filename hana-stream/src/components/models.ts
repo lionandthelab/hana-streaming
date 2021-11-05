@@ -8,8 +8,23 @@ export interface Meta {
 }
 
 export interface Stream {
+  url: string;
   title: string;
-  vid: string;
   tags: [string];
-  playedAt: Date;
+  thumbnailUrl: string;
+  date: Date;
+}
+
+export interface YoutubeSnippet {
+  publishedAt: Date,
+  channelId: string,
+  title: string,
+  description: string,
+  thumbnails: {
+    maxres: {
+      url: string,
+      width: number,
+      height: number
+    }
+  }
 }
